@@ -18,7 +18,7 @@ streamlit run app.py
 
 -----------------------------------------------------------------------
 
-## **5️⃣ Push Future Updates**
+## **Push Future Updates**
 Whenever you make changes, run:
 
 ```bash
