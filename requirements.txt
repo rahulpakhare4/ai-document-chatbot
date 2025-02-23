@@ -1,0 +1,6 @@
+langchain
+langchain_huggingface
+langchain_groq
+chromadb
+sentence-transformers
+PyPDF2
