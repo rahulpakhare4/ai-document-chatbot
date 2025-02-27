@@ -1,7 +1,8 @@
 streamlit
 chromadb
-langchain==0.1.13  # Ensure compatibility
-huggingface-hub
+langchain
+torch
+transformers
 sentence-transformers
-pypdf2
-numpy
+tiktoken
+faiss-cpu
