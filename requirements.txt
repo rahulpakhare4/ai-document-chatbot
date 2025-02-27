@@ -1,6 +1,7 @@
-langchain
-langchain_huggingface
-langchain_groq
+streamlit
 chromadb
+langchain
+huggingface-hub
 sentence-transformers
-PyPDF2
+pypdf2
+numpy
