@@ -1,7 +1,8 @@
 import streamlit as st
-import chromadb
 from langchain.embeddings.huggingface import HuggingFaceEmbeddings
 from PyPDF2 import PdfReader
+import chromadb
+from chromadb.config import Settings
 
 # Streamlit UI
 st.title("📄 AI Chatbot with PDF Support")
@@ -15,8 +16,8 @@ if uploaded_file:
     extracted_text = "\n".join([page.extract_text() or "" for page in reader.pages])
     st.success(f"✅ Extracted text from {len(reader.pages)} pages!")
 
-    # Initialize ChromaDB (Use in-memory storage)
-    chroma_client = chromadb.Client()
+    # 🔥 Fix: Use ChromaDB with in-memory storage (no persistence)
+    chroma_client = chromadb.Client(Settings(anonymized_telemetry=False))  # ✅ FIXED!
     collection = chroma_client.get_or_create_collection(name="ai_knowledge_base")
 
     # Load embeddings model
