@@ -4,8 +4,14 @@ from PyPDF2 import PdfReader
 import chromadb
 from chromadb.config import Settings
 
-# Streamlit UI
+# Use in-memory database
+chroma_client = chromadb.PersistentClient(path="./chroma_db")  # ✅ Fix for Streamlit
+
+
 st.title("📄 AI Chatbot with PDF Support")
+
+# Dummy Collection
+collection = chroma_client.get_or_create_collection(name="ai_knowledge_base")
 
 # Upload PDF
 uploaded_file = st.file_uploader("📂 Upload a PDF", type="pdf")
