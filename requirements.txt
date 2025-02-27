@@ -1,6 +1,6 @@
 streamlit
 chromadb
-langchain
+langchain==0.1.13  # Ensure compatibility
 huggingface-hub
 sentence-transformers
 pypdf2
